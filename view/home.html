@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font External-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://ptramdhn.info/DigiHero/style.css"/>
+    <!--Ionicon JS-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body class="login-body">
+    <header class="header-shadow">
+      <nav class=" navbar-base">
+        <div>
+          <img class="md:w-120" src="https://ptramdhn.info/DigiHero/img/DigiheroLogo.png" />
+        </div>
+        <div
+          class="nav-Links"
+        >
+          <ul
+            class="navbar-list" style="list-style-type: none;"
+          >
+            <li>
+              <a class="list-fitur" href="#">Home</a>
+            </li>
+            <li>
+              <a class="list-fitur" href="#">Tentang Kami</a>
+            </li>
+            <li>
+              <a class="list-fitur" href="#">Program Digi</a>
+            </li>
+            <li>
+              <a class="list-fitur" href="#">Contact Digi</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            class="login-btn"
+          >
+            Login
+          </button>
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="menu-btn text-3xl cursor-pointer md:hidden"
+          ></ion-icon>
+        </div>
+      </nav>
+    </header>
+      <div class="lp-grid">
+        <div class="grid-lp-left">
+          <div class="c_landing-page-frame2">
+            <a class="c_landing-page-frame3" href="/Register">
+              Get Started
+            </a>
+            <Button class="c_landing-page-frame4">
+              Lihat Selengkapnya
+            </Button>
+          </div> 
+           <div class="c_landing-page-text06">
+            <p class="c_landing-page-text07">
+              Platform penghubung terbaik antara masyarakat dan relawan digital untuk
+              pemberian edukasi digital di berbagai daerah.
+            </p>
+          </div>
+           <div class="c_landing-page-text02">
+            <p class="c_landing-page-text03">
+              <span class="c_landing-page-text04">
+                Platform Terbaik Untuk Program
+              </span>
+              <span class="c_landing-page-text05">Edukasi Digital</span>
+            </p>
+          </div>
+          <div class="c_landing-page-frame1">
+            <div class="c_landing-page-text">
+              <p class="c_landing-page-text01">
+                #1 Programs and Volutenteers DigiEdu
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="grid-lp-right">
+          <div>
+            <img class="img-digi" src="https://ptramdhn.info/DigiHero/img/DigiImage.png" alt="DigiHero">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const navLinks = document.querySelector(".nav-Links");
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
+  </body>
+</html>

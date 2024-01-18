@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Font External-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://ptramdhn.info/DigiHero/registrasiSuccess.css" />
+    <!--Ionicon JS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="bg-white h-fit">
+
+<div class="lp-grid">
+    <div class="grid-lp-left">
+        <div class="c_landing-page-frame2">
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">
+                <div class="div"><a href="/">Kembali Ke Beranda</a></div>
+            </button>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">
+                <div class="div"><a href="applicantForm2.html">Login Sekarang</a></div>
+            </button>
+        </div>
+        <div class="c_landing-page-text06">
+            <p class="c_landing-page-text07">
+                Akun anda telah terdaftar dan diaktifkan, pilih opsi berikut untuk menentukan langkah anda berikutnya.
+            </p>
+        </div>
+        <h1 class="login-who">Registrasi Berhasil, Akun Anda Telah Diaktifkan!</h1>
+
+        <div class="login-left">
+            <div class="login-left01">
+                <img class="login-digi-logo" src="https://ptramdhn.info/DigiHero/img/DigiheroLogo.png" alt="DigiHero">
+            </div>
+            <div class="login-left02">
+                <div class="login-form">
+                    <label for="userType">Select your role:</label>
+                    <select id="userType">
+                        <option value="admin">Admin</option>
+                        <option value="applicant">Applicant</option>
+                        <option value="digihero">Digihero</option>
+                    </select>
+                    <button onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grid-lp-right">
+        <div class="slideshow-container relative">
+            <div class="mySlides">
+                <img class="img-digi1" src="https://ptramdhn.info/DigiHero/img/anak.jpg" alt="DigiHero">
+                <div class="slide-text">Kegiatan Edukasi Di Palangkaraya, Kalteng</div>
+            </div>
+            <div class="mySlides">
+                <img class="img-digi1" src="https://ptramdhn.info/DigiHero/img/anak5.jpg" alt="Anak">
+                <div class="slide-text">Kegiatan Edukasi Di Lhokseumawe, Aceh</div>
+            </div>
+            <div class="mySlides">
+                <img class="img-digi1" src="https://ptramdhn.info/DigiHero/img/anak2.jpg" alt="Anak 1">
+                <div class="slide-text">Kegiatan Edukasi Di Klaten, Jawa Tengah.</div>
+            </div>
+            <div class="mySlides">
+                <img class="img-digi1" src="https://ptramdhn.info/DigiHero/img/anak7.jpg" alt="Anak 2">
+                <div class="slide-text">Kegiatan Edukasi Di Kebumen, Jawa Tengah.</div>
+            </div>
+            <div style="text-align:center; margin-top: 10px;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        var slideIndex = 0;
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                dots[i].classList.remove("active");
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+
+            setTimeout(showSlides, 3000);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n - 1);
+        }
+
+        showSlides();
+
+        function login() {
+            var userType = document.getElementById('userType').value;
+            var redirectUrl;
+
+            switch (userType) {
+                case 'admin':
+                    redirectUrl = 'admin.html';
+                    break;
+                case 'applicant':
+                    redirectUrl = 'applicant.html';
+                    break;
+                case 'digihero':
+                    redirectUrl = 'digihero.html';
+                    break;
+                default:
+                    alert('Invalid role selected');
+                    return;
+            }
+
+            window.location.href = redirectUrl;
+        }
+    </script>
+</body>
+</html>
